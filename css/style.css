@@ -166,7 +166,7 @@ header .container nav ul {
   width: 40%;
 }
 header .container nav ul li {
-  padding: 10px 15px;
+  padding: 15px;
 }
 header .container nav ul li a {
   font-size: 14px;
@@ -225,22 +225,6 @@ header .container section.header-infos .header-img img {
     order: -1;
     margin: 0 auto;
   }
-  header .container nav ul {
-    flex-direction: column;
-    position: absolute;
-    top: 0px;
-    background-color: var(--bg-2nd-color);
-    width: 51%;
-    height: 200%;
-    display: none;
-  }
-  header .container nav ul.saison-nav {
-    right: 0px;
-  }
-  header .container nav i {
-    display: block;
-    z-index: 2;
-  }
   header .container section.header-infos {
     flex-direction: column;
     margin: 0px;
@@ -251,17 +235,43 @@ header .container section.header-infos .header-img img {
     text-align: center;
   }
 }
+/* the nav menu in small and medium screen  */
+@media (max-width: 991px) {
+  header .container nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 120px;
+    background-color: var(--bg-2nd-color);
+    width: 51%;
+    height: auto;
+    display: none;
+  }
+  header .container nav ul.saison-nav {
+    right: 0px;
+  }
+  header .container nav i:hover ~ ul {
+    display: block;
+    text-align: center;
+  }
+  header .container nav i {
+    display: block;
+  }
+}
+@media (max-width: 767px) {
+  header .container nav ul {
+    top: 120px;
+  }
+}
+@media (max-width: 360px) {
+  header .container nav ul {
+    top: 70px;
+  }
+}
 @media (min-width: 768px) and (max-width: 991px) {
   header .container nav .nav-img {
     width: 35%;
     order: -1;
     margin: 0 auto;
-  }
-  header .container nav ul {
-    display: none;
-  }
-  header .container nav i {
-    display: block;
   }
   header .container section.header-infos {
     flex-direction: column;
